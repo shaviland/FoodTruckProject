@@ -107,6 +107,7 @@ public class FoodTruck {
 			if (selection > 4 || selection < 1) {
 				System.err.println("That is not a valid selection.");
 			} else if (selection == 1) {
+				System.out.println();
 				for (int i = 0; i < truckGroup.length; i++) {
 					if (truckGroup[i] == null) {
 						break;
@@ -114,11 +115,12 @@ public class FoodTruck {
 						System.out.println("Truck " + (i + 1) + ": " + truckGroup[i]);
 					}
 				}
+				System.out.println();
 			} else if (selection == 2) {
 				int j = 0;
 				int newRate = 0;
 				for (int i = 0; i < truckGroup.length; i++) {
-					if (truckGroup[i].getTruckRating() == 0) {
+					if (truckGroup[i] == null) {
 						break;
 					}
 					int rate = truckGroup[i].getTruckRating();
@@ -126,19 +128,19 @@ public class FoodTruck {
 					j = i + 1;
 
 				}
-				System.out.println("The average food truck rating is: " + (newRate / j));
+				System.out.println("\nThe average food truck rating is: " + (newRate / j) + "\n");
 			} else if (selection == 3) {
 				FoodTruck highestRatedTruck = truckGroup[0];
 				for (int i = 1; i < truckGroup.length; i++) {
-					if (truckGroup[i].getTruckRating() == 0) {
-						break;
+					if (truckGroup[i] == null) {
+						continue;
 					} else if (highestRatedTruck.getTruckRating() < truckGroup[i].getTruckRating()) {
 						highestRatedTruck = truckGroup[i];
 					}
 				}
-				System.out.println("The highest rated food truck is: " + highestRatedTruck);
+				System.out.println("\nThe highest rated food truck is: " + highestRatedTruck + "\n");
 			}else if( selection == 4) {
-				System.out.println("Goodbye.");
+				System.out.println("\nGoodbye.");
 				quit = true;
 			}
 

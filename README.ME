@@ -1,0 +1,51 @@
+## Food Truck Rating Project
+
+### Week 2 Homework Project for Skill Distillery
+
+### Overview
+
+This program allows a user to input information on up to 5 Food Trucks, including
+it's name, the type of food served, and their rating of the truck. The user has
+the option of inputting less than the 5 slotted trucks and move on to the next
+part of the program. A unique ID is assigned to each truck by the program.
+
+The once their selected trucks are inputted, the user is then presented with a
+menu where they can choose to have the information of all of the trucks displayed,
+have the program calculate the average rating of the food trucks, and have the
+program output the highest rated food truck. When the user is done, they can select
+the option for quit. It will display, "Goodbye." and then exit the program.
+
+###Technologies/ Topics applied
+
+The food trucks were set up in their own object with fields: name, type, truckID,
+truckRating, nextTruckID. The nextTruckID was used to increment and set the
+truckID so that it could be unique to each inputted truck. nextTruckID was incremented
+in the setter for truckID. A for loop was implemented so that the user could add
+in the information for the truck and have it stored in an array. The second menu
+was set  up in a do while loop with the quit boolean set to false, when the user
+selects the option to quit, it changes the quit variable to true and exits the program.
+
+The truck information was used by setting up the object's toString() with all of
+it's fields and then displaying it by looping through and breaking it if the array slot
+is null.
+
+In order to find the average rating, the rating had to be stored to a new variable
+and the .getRating() was added to it each time the loop executed and then it was
+divided using a variable that stored the number of times the loop went through.
+
+The highest rated truck was found by looping through the array and comparing the
+items in the array one after another, if one was higher than another then it would
+be stored in the highestRatedTruck variable. When the loop complete or was broken
+due to coming across a null slot, it would then be displayed on the string.
+
+
+### Lessons Learned
+
+One of the trickiest lessons I learned was how to increment the static ID and then
+add a unique ID to each iteration of the truck. I wound up having to set up a
+nextTruckID field and increment that in the setter field of truckID.
+
+I also learned that non-static methods cannot be called by a static method in the
+same class.  I originally had the methods in the FoodTruckAPP but it would not
+compile if I had them  non-static. I had to put both the truckInput and resultsMenu in
+the FoodTruck class and call it from the app main.
