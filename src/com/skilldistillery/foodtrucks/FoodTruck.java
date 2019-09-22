@@ -117,7 +117,7 @@ public class FoodTruck {
 			} else if (selection == 2) {
 				int j = 0;
 				int newRate = 0;
-				for (int i = 0; i < truckGroup.length; i++) {
+				for (int i = 0; i <= truckGroup.length; i++) {
 					if (truckGroup[i] == null) {
 						break;
 					}
@@ -125,7 +125,7 @@ public class FoodTruck {
 					System.out.println(rate);
 					newRate += rate;
 					System.out.println("new rate " + newRate);
-					j = i;
+					j = i + 1;
 					System.out.println("# " + j);
 
 				}
