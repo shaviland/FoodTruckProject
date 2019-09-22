@@ -6,8 +6,9 @@ public class FoodTruck {
 
 	private String name;
 	private String type;
-	private static int truckID = 1300;
+	private int truckID;
 	private int truckRating;
+	private static int nextTruckID = 110;
 
 	public FoodTruck() {
 		super();
@@ -17,13 +18,13 @@ public class FoodTruck {
 		super();
 		this.name = name;
 		this.type = type;
-		FoodTruck.truckID = truckID;
+		this.truckID = nextTruckID;
 		this.truckRating = truckRating;
 	}
 
 	@Override
 	public String toString() {
-		return String.format("FoodTruck [name=%s, type=%s, truckID=%s, truckRating=%s]", name, type, truckID,
+		return String.format("FoodTruck [name = %s, type = %s, truckID = %s, truckRating = %s]", name, type, truckID,
 				truckRating);
 	}
 
@@ -48,8 +49,8 @@ public class FoodTruck {
 	}
 
 	public void setTruckID(int truckID) {
-		truckID++;
-		FoodTruck.truckID = truckID;
+		this.truckID = nextTruckID;
+		nextTruckID++;
 	}
 
 	public int getTruckRating() {
@@ -85,7 +86,6 @@ public class FoodTruck {
 				kb.nextLine();
 				ft.setTruckRating(truckRating);
 				truckGroup[i] = ft;
-				truckGroup[i].setTruckID(truckID);
 
 			}
 
@@ -122,7 +122,6 @@ public class FoodTruck {
 						break;
 					}
 					int rate = truckGroup[i].getTruckRating();
-					System.out.println(rate);
 					newRate += rate;
 					j = i + 1;
 
