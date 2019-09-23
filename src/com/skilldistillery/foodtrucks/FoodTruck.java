@@ -24,7 +24,7 @@ public class FoodTruck {
 
 	@Override
 	public String toString() {
-		return String.format("FoodTruck [name = %s, type = %s, truckID = %s, truckRating = %s]", name, type, truckID,
+		return String.format("Name = %s, Type = %s, Truck ID = %s, Truck Rating = %s", name, type, truckID,
 				truckRating);
 	}
 
@@ -65,11 +65,16 @@ public class FoodTruck {
 		// eclipse isn't allowing the method to be non-static.
 
 		System.out.println("Welcome to Food Truck ratings!");
-		FoodTruck[] truckGroup = new FoodTruck[5];
+		System.out.println();
+		int j = 0;
+		System.out.println("How many trucks would you like to rate?");
+		j = kb.nextInt();
+		kb.nextLine();
+		FoodTruck[] truckGroup = new FoodTruck[j];
 		for (int i = 0; i < truckGroup.length; i++) {
 			FoodTruck ft = new FoodTruck();
 
-			System.out.println("Please input truck name or \"quit\" to exit:");
+			System.out.println("\nPlease input truck name or \"quit\" to exit:");
 			String name = kb.nextLine();
 			kb.nextLine();
 			if (name.equalsIgnoreCase("quit")) {
@@ -77,14 +82,15 @@ public class FoodTruck {
 			} else {
 				ft.setName(name);
 				ft.setTruckID(truckID);
-				System.out.println("Please input food type:");
+				System.out.println("\nPlease input food type:");
 				String type = kb.nextLine();
 				kb.nextLine();
 				ft.setType(type);
-				System.out.println("Please input rating (1-10)");
+				System.out.println("\nPlease input rating (1-10)");
 				int truckRating = kb.nextInt();
 				kb.nextLine();
 				ft.setTruckRating(truckRating);
+				System.out.println();
 				truckGroup[i] = ft;
 
 			}
@@ -97,11 +103,15 @@ public class FoodTruck {
 	public void resultsMenu(Scanner kb, FoodTruck[] truckGroup) {
 		boolean quit = false;
 		do {
-			System.out.println("Please select an option:");
-			System.out.println("1. List all existing food trucks.");
-			System.out.println("2. See the average rating of food trucks.");
-			System.out.println("3. Display the highest-rated food truck.");
-			System.out.println("4. Quit");
+			System.out.println("*********************************************");
+			System.out.println("*********************************************");
+			System.out.println("|         Please select an option:          |");
+			System.out.println("| 1. List all existing food trucks.         |");
+			System.out.println("| 2. See the average rating of food trucks. |");
+			System.out.println("| 3. Display the highest-rated food truck.  |");
+			System.out.println("| 4. Quit                                   |");
+			System.out.println("*********************************************");
+			System.out.println("*********************************************");
 			int selection = kb.nextInt();
 
 			if (selection > 4 || selection < 1) {

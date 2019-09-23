@@ -1,3 +1,4 @@
+
 package com.skilldistillery.foodtrucks;
 
 import java.util.Scanner;
@@ -17,3 +18,4 @@ public class FoodTruckApp {
 
 		
 }
+
