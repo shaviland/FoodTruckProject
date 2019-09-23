@@ -7,15 +7,10 @@ public class FoodTruckApp {
 
 	public static void main(String[] args) {
 		Scanner kb = new Scanner(System.in);
-		FoodTruck foodTruck = new FoodTruck();
-		
-		
-		foodTruck.truckInput(kb);
+		FoodTruckMenu truckInfo = new FoodTruckMenu();
 
+		truckInfo.truckInput(kb);
 
-		
 	}
 
-		
 }
-
